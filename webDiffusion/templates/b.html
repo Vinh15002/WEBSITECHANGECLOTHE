@@ -151,10 +151,11 @@
             <div class="load-area" id="loadArea" >
                 <div class="image-preview" id="imagePreview2">
                     <span class="close-btn" id="closeBtn2">X</span>
-                    <img id="previewImage2" src="" alt="Hình ảnh đã chọn">
+                    <img id="previewImage2" src="" alt="Hình ảnh đã chọn"  name="imageclothes01">
                 </div>
                 <p>Chọn ảnh:</p>
-                <input type="file" id="fileInput2" accept="image/*" name = 'image2'>
+                <input type="file" id="fileInput2" accept="image/*" >
+                <input id = "getImage02" type="text" name="imageclothes02">
             </div>
             <div class="a">Ảnh 3</div>
         </div>
@@ -188,6 +189,7 @@
         const loadArea = document.getElementById('loadArea');
         const removeBtn = document.getElementById('removeBtn');
         const removeBtn2 = document.getElementById('removeBtn2');
+        const getImage2 = document.getElementById('getImage02')
 
         fileInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -237,8 +239,10 @@
 
 
         function loadImage(src) {
+            getImage2.value = src;
             previewImage2.src = src;
             imagePreview2.style.display = 'flex';
+           
         }
     </script>
 
